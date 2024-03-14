@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# This Bash script displays the content of the current directory in a list format, where only the part of the name after the first dash is displayed.
+
+for file in $(ls)
+do
+    if [[ $file == *-* ]]
+    then
+        echo ${file#*-}
+    fi
+done
