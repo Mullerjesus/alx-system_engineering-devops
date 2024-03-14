@@ -1,25 +1,4 @@
 #!/usr/bin/env bash
-# This script displays a list of currently running processes.
-# Get a list of all processes.
-processes=$(ps -e)
-# Print the header.
-echo "USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND"
-# Loop through the processes and print their information.
-while read -r line; do
-  # Get the user, PID, CPU usage, memory usage, virtual memory size, resident set size,
-  # terminal, state, start time, and command for the process.
-  user=$(echo "$line" | awk '{print $1}')
-  pid=$(echo "$line" | awk '{print $2}')
-  cpu=$(echo "$line" | awk '{print $3}')
-  mem=$(echo "$line" | awk '{print $4}')
-  vsz=$(echo "$line" | awk '{print $5}')
-  rss=$(echo "$line" | awk '{print $6}')
-  tty=$(echo "$line" | awk '{print $7}')
-  stat=$(echo "$line" | awk '{print $8}')
-  start=$(echo "$line" | awk '{print $9}')
-  time=$(echo "$line" | awk '{print $10}')
-  command=$(echo "$line" | awk '{print $11}')
+# Displays a list of currently running processes.
 
-  # Print the process information.
-  printf "%-10s %-5s %-5s %-5s %-6s %-6s %-7s %-6s %-9s %-6s %s\n" "$user" "$pid" "$cpu" "$mem" "$vsz" "$rss" "$tty" "$stat" "$start" "$time" "$command"
-done <<< "$processes"
+ps -auxf
