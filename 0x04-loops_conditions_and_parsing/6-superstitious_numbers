@@ -27,5 +27,5 @@ do
             ;;
     esac
 
-    ((count++))
+   count=$ (( count + 1 ))
 done
