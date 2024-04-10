@@ -1,5 +1,5 @@
-#install pupplet lint
-package { 'puppet-lint':
-  ensure   => '1.1.0',
-  provider => 'gem',
-}
+# how to install a package using puppet
+
+package { 'flask':
+  ensure => "installed"
+  }
