@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
-# Generates an ssh keypair
-ssh-keygen -t rsa -b 4096 -P password -f holberton
+#!/bin/bash
+
+ssh-keygen -t rsa -b 4096 -N "betty" -f school
