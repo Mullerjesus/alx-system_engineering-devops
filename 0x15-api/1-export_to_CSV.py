@@ -14,6 +14,5 @@ if __name__ == "__main__":
     file = f"{id}.csv"
     with open(file, "w") as f:
         for item in todos:
-            f.write(
-                f'"{id}","{user["username"]}","{item["completed"]}","{item["title"]}"\n'
-            )
+            # Split the long line into multiple lines
+            f.write(f'"{id}","{user["username"]}","{item["completed"]}","{item["title"]}"\n')
