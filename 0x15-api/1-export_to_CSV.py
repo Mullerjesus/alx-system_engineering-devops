@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Returns Todo list for a given employee id
-and axports data in the CSV format"""
+and exports data in the CSV format"""
 import requests
 from sys import argv
 
@@ -15,5 +15,5 @@ if __name__ == "__main__":
     with open(file, "w") as f:
         for item in todos:
             f.write(
-f'"{id}","{user["username"]}","{item["completed"]}","{item["title"]}"\n'
+                f'"{id}","{user["username"]}","{item["completed"]}","{item["title"]}"\n'
             )
