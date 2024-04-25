@@ -28,6 +28,6 @@ if __name__ == "__main__":
 
     # Write the JSON data to a file
     with open(f"{user_id}.json", "w") as jsonfile:
-        json.dump(user_tasks, jsonfile)
+        json.dump(user_tasks, jsonfile, indent=4)
 
     print(f"Data for user {user_id} has been saved to {user_id}.json")
