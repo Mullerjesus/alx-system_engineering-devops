@@ -12,8 +12,7 @@ if __name__ == "__main__":
     todos = requests.get(url + f"todos", params={"userId": id}).json()
 
     file = f"{id}.csv"
-    with open(file, "w") as f:
-        for item in todos:
-            f.write(
-f'"{id}","{user["username"]}","{item["completed"]}","{item["title"]}"\n'
-            )
+with open(file, "w") as f:
+    for item in todos:
+        f.write(f'"{id}","{user["username"]}","{item["completed"]}," \
+                 "{item["title"]}"\n')
