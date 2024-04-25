@@ -23,7 +23,7 @@ if __name__ == "__main__":
         # Append the task dictionary to the tasks list
         tasks_info.append(task_dict)
 
-    # Create a dictionary with the user id as the key and the tasks list as the value
+    # Create a dictionary with the user id as the key and the tasks as value
     user_tasks = {user_id: tasks_info}
 
     # Write the JSON data to a file
