@@ -15,4 +15,5 @@ if __name__ == "__main__":
     with open(file, "w") as f:
         for item in todos:
             f.write(
-f'"{id}","{user["username"]}","{item["completed"]}", "{item["title"]}"\n')
+f'"{id}","{user["username"]}","{item["completed"]}", "{item["title"]}"\n'
+            )
