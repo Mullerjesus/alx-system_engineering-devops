@@ -15,4 +15,5 @@ if __name__ == "__main__":
     with open(file, "w") as f:
         for item in todos:
             # Split the long line into multiple lines
-            f.write(f'"{id}","{user["username"]}","{item["completed"]}","{item["title"]}"\n')
+            f.write(f'"{id}","{user["username"]}","{item["completed"]}","'
+                    f'{item["title"]}"\n')
