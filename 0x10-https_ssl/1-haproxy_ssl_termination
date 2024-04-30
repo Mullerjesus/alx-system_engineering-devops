@@ -1,0 +1,7 @@
+frontend www-frontend
+    bind *:443 ssl crt /etc/letsencrypt/live/www.yourdomain.com/fullchain.pem
+    reqadd X-Forwarded-Proto:\ https
+    default_backend www-backend
+
+backend www-backend
+    server webserver1 127.0.0.1:80
