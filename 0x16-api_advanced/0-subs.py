@@ -18,9 +18,4 @@ def number_of_subscribers(subreddit):
     if response.status_code == 200:
         return response.json().get("data").get("subscribers")
     else:
-        return 0
-
-# Call the function with an existing subreddit name
-existing_subreddit = "programming"
-result = number_of_subscribers(existing_subreddit)
-print(result)  # This should output the number of subscribers
+        return (0)
