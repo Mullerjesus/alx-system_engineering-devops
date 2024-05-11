@@ -6,7 +6,6 @@ Run ./0-main.py programming or ./0-main.py this_is_a_fake_subreddit for testing
 
 import requests
 
-
 def number_of_subscribers(subreddit):
     """Function that queries the Reddit API and returns the number of
     subscribers (not active users, total subscribers) for a given subreddit.
