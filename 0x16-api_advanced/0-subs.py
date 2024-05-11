@@ -19,3 +19,8 @@ def number_of_subscribers(subreddit):
         return response.json().get("data").get("subscribers")
     else:
         return 0
+
+# Call the function with an existing subreddit name
+existing_subreddit = "programming"
+result = number_of_subscribers(existing_subreddit)
+print(result)  # This should output the number of subscribers
