@@ -1,8 +1,7 @@
-# Puppet manifest to fix Apache 500 error by restarting Apache service
+# Puppet manifest to correct incorrect `phpp` file extensions to `php` in the WordPress configuration file (`wp-settings.php`)
 
-# Define an exec resource to restart the Apache service
-exec { 'restart-apache':
-  command    => '/usr/sbin/service apache2 restart',
-  path       => '/usr/bin:/bin',
-  refreshonly=> true, # Specify that this exec resource should only run when notified
+exec { 'fix-phpp-to-php-in-wp-settings':
+  command   => 'sed -i.bak "s/phpp/php/g" /var/www/html/wp-settings.php',
+  path      => ['/usr/local/bin', '/usr/bin', '/bin', '/usr/sbin', '/sbin'],
+  onlyif    => 'grep -q "phpp" /var/www/html/wp-settings.php',
 }
