@@ -1,25 +1,4 @@
 #!/usr/bin/env bash
-
-# Script to generate a 4096-bit RSA key pair with a passphrase
-
-# Variables
-KEY_NAME="school"
-PASSPHRASE="betty"
-BITS=4096
-
-# Check if the key already exists to prevent overwriting
-if [ -f "$KEY_NAME" ]; then
-    echo "The private key '$KEY_NAME' already exists. Exiting to avoid overwriting."
-    exit 1
-fi
-
-# Generate the RSA key pair
-ssh-keygen -t rsa -b $BITS -f $KEY_NAME -N "$PASSPHRASE"
-
-# Check if the key pair generation was successful
-if [ $? -eq 0 ]; then
-    echo "RSA key pair created successfully."
-else
-    echo "An error occurred while creating the RSA key pair."
-    exit 1
-fi
+# Bash script that creates an RSA key pair
+#ssh-keygen -b 4096 -P betty -f school
+ssh-keygen -t rsa -b 4096 -P betty -f school
